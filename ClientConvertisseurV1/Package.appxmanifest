@@ -29,7 +29,7 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="ClientConvertisseurV1.App">
+      EntryPoint="$targetentrypoint$">
       <uap:VisualElements
         DisplayName="ClientConvertisseurV1"
         Description="ClientConvertisseurV1"
