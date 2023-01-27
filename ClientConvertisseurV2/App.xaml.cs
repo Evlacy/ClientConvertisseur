@@ -1,7 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
-using ClientConvertisseurV1.Views;
+using ClientConvertisseurV2.ViewModels;
+using ClientConvertisseurV2.Views;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -23,7 +27,7 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ClientConvertisseurV1
+namespace ClientConvertisseurV2
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -37,6 +41,12 @@ namespace ClientConvertisseurV1
         public App()
         {
             this.InitializeComponent();
+
+            Ioc.Default.ConfigureServices(
+                new ServiceCollection()
+                .AddSingleton<ConvertisseurEuroViewModel>()
+                .BuildServiceProvider());
+            // Ce code permet d’enregistrer dans le container d’IoC par défaut (IoC.Default) le "service" ConvertisseurEuroViewModel(notre classe View Model) au démarrage de l’application.
         }
 
         /// <summary>
@@ -46,12 +56,25 @@ namespace ClientConvertisseurV1
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
+            // Create a frame to act as the navigation context and navigate to the fisrt page
             Frame rootFrame = new Frame();
+            // Place the window in the current Window
             this.m_window.Content = rootFrame;
+            // Ensure the current window is active
             m_window.Activate();
+            // Navigate to the first page
             rootFrame.Navigate(typeof(ConvertisseurEuroPage));
+            MainRoot = m_window.Content as FrameworkElement;
         }
 
         private Window m_window;
+
+        // Erreurs :
+        public static FrameworkElement MainRoot { get; private set; }
+
+        public ConvertisseurEuroViewModel ConvertisseurEuroVM
+        {
+            get { return Ioc.Default.GetService<ConvertisseurEuroViewModel>(); }
+        }
     }
 }
