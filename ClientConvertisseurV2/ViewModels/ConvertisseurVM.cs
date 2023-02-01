@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ClientConvertisseurV2.ViewModels
 {
-    public abstract class ConvertisseurVM : ObservableObject
+    public abstract class ConvertisseurVM : ObservableObject, IConvertisseurVM
     {
         // Public pour tests
         public async void GetDataOnLoadAsync()
