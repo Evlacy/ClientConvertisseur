@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientConvertisseurV1", "Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConvertisseurV2", "ClientConvertisseurV2\ClientConvertisseurV2.csproj", "{E8025E06-8EED-4DC9-86E8-264DFEA8ED8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConvertisseurV2Tests", "ClientConvertisseurV2Tests\ClientConvertisseurV2Tests.csproj", "{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,22 +67,6 @@ Global
 		{E8025E06-8EED-4DC9-86E8-264DFEA8ED8D}.Release|x86.ActiveCfg = Release|x86
 		{E8025E06-8EED-4DC9-86E8-264DFEA8ED8D}.Release|x86.Build.0 = Release|x86
 		{E8025E06-8EED-4DC9-86E8-264DFEA8ED8D}.Release|x86.Deploy.0 = Release|x86
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|x64.Build.0 = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Debug|x86.Build.0 = Debug|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|ARM64.Build.0 = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|x64.ActiveCfg = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|x64.Build.0 = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|x86.ActiveCfg = Release|Any CPU
-		{F2A6010C-9AA1-43F4-83AE-76AD8B6A2F2F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
