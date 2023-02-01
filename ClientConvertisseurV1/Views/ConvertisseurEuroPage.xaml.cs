@@ -93,7 +93,7 @@ namespace ClientConvertisseurV1.Views
             }
         }
 
-        private async void GetDataOnLoadAsync()
+        private async void GetDataOnLoadAsync() 
         {
             WSService service = new WSService("https://localhost:7232/api/");
             List<Devise> result = await service.GetDevisesAsync("devises");
