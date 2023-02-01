@@ -1,0 +1,42 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="ClientConvertisseurV2.Views.ConvertisseurDevisesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClientConvertisseurV2.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel Margin="50">
+
+        <TextBlock TextAlignment="Center" Text="Montant en Devises" Margin="10" Name="B1" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="180"/>
+
+        <TextBox
+            Text="{Binding MontantDevise, Mode=TwoWay}"
+            Width="180"
+            Margin="10"
+            Name="BOX1"
+            RelativePanel.Below="B1"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+        <TextBlock TextAlignment="Center" Width="180" Text="Devise" Margin="10" Name="B2" RelativePanel.Below="BOX1"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+        <ComboBox DisplayMemberPath="NomDevise" ItemsSource="{Binding Devises}" SelectedItem="{Binding DeviseSelected, Mode=TwoWay}" Width="180" Margin="10" Name="Combo" RelativePanel.Below="B2"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+        <Button Command="{Binding BtnSetConversion}" Width="180" Content="Convertir" Name="BTN" RelativePanel.Below="Combo" Margin="10" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+        <TextBlock TextAlignment="Center" Width="180" Text="Montant en Euros" Margin="15" Name="B3" RelativePanel.Below="BTN"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+        <TextBox
+            Text="{Binding MontantEuros}"
+            Width="180"
+            Margin="10"
+            Name="BOX2"
+            IsReadOnly="True"
+            RelativePanel.Below="B3"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+
+    </RelativePanel>
+</Page>

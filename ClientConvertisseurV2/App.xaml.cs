@@ -45,6 +45,7 @@ namespace ClientConvertisseurV2
             Ioc.Default.ConfigureServices(
                 new ServiceCollection()
                 .AddSingleton<ConvertisseurEuroViewModel>()
+                .AddSingleton<ConvertisseurDevisesViewModel>()
                 .BuildServiceProvider());
             // Ce code permet d’enregistrer dans le container d’IoC par défaut (IoC.Default) le "service" ConvertisseurEuroViewModel(notre classe View Model) au démarrage de l’application.
         }
@@ -63,7 +64,10 @@ namespace ClientConvertisseurV2
             // Ensure the current window is active
             m_window.Activate();
             // Navigate to the first page
-            rootFrame.Navigate(typeof(ConvertisseurEuroPage));
+
+            // rootFrame.Navigate(typeof(ConvertisseurEuroPage));
+            rootFrame.Navigate(typeof(ConvertisseurDevisesPage));
+
             MainRoot = m_window.Content as FrameworkElement;
         }
 
@@ -75,6 +79,11 @@ namespace ClientConvertisseurV2
         public ConvertisseurEuroViewModel ConvertisseurEuroVM
         {
             get { return Ioc.Default.GetService<ConvertisseurEuroViewModel>(); }
+        }
+
+        public ConvertisseurDevisesViewModel ConvertisseurDevisesVM
+        {
+            get { return Ioc.Default.GetService<ConvertisseurDevisesViewModel>(); }
         }
     }
 }
